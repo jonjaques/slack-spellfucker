@@ -14,6 +14,9 @@ app.post('/commands/:command', (req, res)=> {
   	case 'spellfucker':
   		return spellfuckerCommand(req, res)
   		break;
+  	default:
+  		return res.sendStatus(404)
+  		break;
   }
 })
 
