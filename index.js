@@ -19,10 +19,24 @@ app.post('/commands/:command', (req, res)=> {
 
 
 function spellfuckerCommand(req, res) {
-	let text = req.body.text
-	let type = text.startsWith('@here') ? 'in_channel' : 'ephemeral'
-	let words = text.split(' ')
 	let ratings = []
+	let text = req.body.text
+	let type = 'ephemeral'
+
+	if (text === 'help') {
+		return res.json({
+			response_type: type,
+			text: 'Simply input a message... To post to the channel, start your message with "channel" followed by a space.'
+		})
+	}
+
+	if (text.startsWith('channel')) {
+		type = 'in_channel'
+		text = text.slice(8)
+	}
+	
+	let words = text.split(' ')
+	
 	let newText = words.map(word => {
 	  if (word.startsWith('@') || word.startsWith('#') || word === ' ') {
 	  	return word
