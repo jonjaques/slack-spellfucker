@@ -1,0 +1,20 @@
+{
+  "name": "slack-spellfucker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "spellfucker": "https://github.com/jonjaques/spellfucker.git#master"
+  },
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
