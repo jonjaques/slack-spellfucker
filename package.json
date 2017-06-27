@@ -5,10 +5,10 @@
   "repository": "",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.17.1",
+    "body-parser": "^1.17.2",
     "compression": "^1.6.2",
-    "express": "^4.15.2",
-    "spellfucker": "^0.1.2"
+    "express": "^4.15.3",
+    "spellfucker": "^0.1.5"
   },
   "scripts": {
     "start": "node index",
