@@ -22,7 +22,7 @@ app.post('/commands/:command', (req, res)=> {
 
 
 function spellfuckerCommand(req, res) {
-	let ratings = []
+	//let ratings = []
 	let text = req.body.text
 	let type = 'ephemeral'
 
@@ -45,24 +45,25 @@ function spellfuckerCommand(req, res) {
 	  	return word
 	  }
 	  let fucked = spellfucker(word)
-	  ratings.push(fucked.rating)
-	  return fucked.result
+	  //ratings.push(fucked.rating)
+	  //return fucked.result
+	  return fucked
 	}).join(' ')
 
-	let ratingSum = ratings.reduce((m, rating)=> {
+	/*let ratingSum = ratings.reduce((m, rating)=> {
 		let n = parseInt(rating.replace('%', ''), 10)
 		m = m + n
 		return m
-	}, 0)
+	}, 0)*/
 	
-	let rating = ratingSum / ratings.length
+	//let rating = ratingSum / ratings.length
 	
 	res.json({
 	  response_type: type,
-	  text: newText,
+	  text: newText/*,
 	  attachments: [
 	  	{text: `Rating: ${rating.toFixed(2)}%`}
-	  ]
+	  ]*/
 	})
 }
 
